@@ -1,0 +1,69 @@
+{
+  "name": "@akameco/use-actions",
+  "version": "0.0.0",
+  "description": "redux use-actions for me",
+  "license": "MIT",
+  "repository": "akameco/use-actions",
+  "author": "akameco <akameco.t@gmail.com> (https://akameco.github.io)",
+  "files": [
+    "dest"
+  ],
+  "main": "dest/index.js",
+  "types": "dest/index.d.ts",
+  "keywords": [
+    "redux",
+    "react",
+    "hooks",
+    "actions"
+  ],
+  "engines": {
+    "node": ">=10"
+  },
+  "scripts": {
+    "contributors:add": "all-contributors add",
+    "prebuild": "del dest",
+    "build": "tsc",
+    "prepublish": "yarn build && del dest/**/*.test.*",
+    "fmt": "prettier --write '**/*.{ts,js,json,md}'",
+    "lint": "eslint src/**/*.ts --cache"
+  },
+  "dependencies": {
+    "react-redux": "^7.1.0",
+    "redux": "^4.0.4"
+  },
+  "lint-staged": {
+    "*.{ts,tsx,js,jsx}": [
+      "prettier --write",
+      "eslint --fix",
+      "git add"
+    ],
+    "*.{md,json}": [
+      "prettier --write",
+      "git add"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "devDependencies": {
+    "@akameco/tsconfig": "^0.2.0",
+    "@types/jest": "^24.0.17",
+    "@types/node": "^12.7.2",
+    "@types/react": "^16.9.1",
+    "@types/react-redux": "^7.1.1",
+    "all-contributors-cli": "^6.8.1",
+    "del-cli": "^2.0.0",
+    "eslint": "^6.1.0",
+    "eslint-config-precure": "^4.18.1",
+    "husky": "^3.0.3",
+    "lint-staged": "^9.2.1",
+    "prettier": "^1.18.2",
+    "react": "^16.9.0",
+    "typescript": "^3.5.3"
+  },
+  "peerDependencies": {
+    "react": "^16.8.0"
+  }
+}

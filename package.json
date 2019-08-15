@@ -1,6 +1,6 @@
 {
   "name": "@akameco/use-actions",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "redux use-actions for me",
   "license": "MIT",
   "repository": "akameco/use-actions",
